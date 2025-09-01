@@ -1,3 +1,5 @@
+from datetime import time
+
 ### Exercício 1: Verificação de Qualidade de Dados
 # Você está analisando um conjunto de dados de vendas e precisa garantir 
 # que todos os registros tenham valores positivos para `quantidade` e `preço`. 
@@ -52,11 +54,20 @@ if idade >= 18 and idade <=65:
         print("Erro: formato de email inválido")
 else:
     print("Sua idade é inválida")
+
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
 # transações suspeitas. Uma transação é considerada suspeita se o valor for superior 
 # a R$ 10.000 ou se ocorrer fora do horário comercial (antes das 9h ou depois das 18h). 
 # Dada uma transação como `transacao = {'valor': 12000, 'hora': 20}`, verifique se ela é suspeita.
+
+valor=12000.00
+hora = time(20,0)
+
+if valor > 10000.00 and hora < 9 or hora > 18:
+    print("Transação suspeita não autorizada")
+else: 
+    print("Transação autorizada")
 
 ### Exercício 6. Contagem de Palavras em Textos
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
@@ -77,6 +88,12 @@ else:
 
 ### Exercício 11. Leitura de Dados até Flag
 # Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
+
+entrada = " "
+
+while entrada.upper != "SAIR":
+  entrada = input("Digite alguma coisa: ")
+  print(entrada)   
 
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
