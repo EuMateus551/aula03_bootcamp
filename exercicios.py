@@ -98,11 +98,59 @@ while entrada.upper != "SAIR":
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
 
+num = -1
+while num <0 or num > 10:
+    try:
+       num = int(input("Insira um número de 0 até 10: ")) 
+    except ValueError:
+        print("Por favor, digite um número válido!")
+print(f"Você digitou o número válido: {num}")
+
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
 
+dados = list(range(0, 30))
+quantos_por_vez = 6
+pagina=0
+
+while True:
+    inicio= pagina*quantos_por_vez
+    fim=inicio+quantos_por_vez
+    pagina_dados=dados[inicio:fim]
+
+    if not pagina_dados:
+        break
+
+    print(f"Página {pagina+1}:{pagina_dados}")
+
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
+usuario_salvo= "Mateus"
+senha_salva= "mateus123"
+limite_tentativas=3
 
+while limite_tentativas>0:
+    usuario= input("Digite seu nome de usuário: ")
+    senha= input("Digite sua senha: ")
+    
+    if usuario == usuario_salvo:
+        if senha == senha_salva:
+            print("Login efetuado com sucesso!")
+            break
+        else:
+            print("Senha digitada incorretamente")
+    else:
+            print("Usuário digitado incorretamente")
+    limite_tentativas -=1
+else:    
+    print("Bloqueio: Limite de tentativas atingido")
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
+
+dados=list(range(0,10))
+indice=0
+condicao_parada=10
+
+while indice < len(dados) and dados[indice] != condicao_parada:
+    print(f"dado: {dados[indice]}")
+    indice+=1
