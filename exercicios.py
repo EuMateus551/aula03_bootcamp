@@ -72,6 +72,20 @@ else:
 ### Exercício 6. Contagem de Palavras em Textos
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
 
+texto = input("Digite um texto: ")
+
+palavras = texto.split(" ")
+contagem ={}
+
+for palavra in palavras:
+    if palavra in contagem:
+        contagem[palavra] += 1
+    else:
+        contagem[palavra] = 1
+
+for palavra, quantidade in contagem.items():
+    print(f"{palavra}:{quantidade}")
+    
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
 
