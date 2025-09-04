@@ -89,14 +89,38 @@ for palavra, quantidade in contagem.items():
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
 
+numeros = [10, 20, 40, 50, 60, 70, 80, 90, 100]
+
+menor_numero = min(numeros)
+maior_numero = max(numeros)
+
+normalizardos=[]
+for n in numeros:
+    valor = (n-menor_numero)/(maior_numero - menor_numero)
+    normalizardos.append(valor)
+
+print(normalizardos)
+
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
 
 ### Exercício 9. Extração de Subconjuntos de Dados
 # Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares.
 
+num = [1, 3, 35, 7, 2, 10, 8]
+
+pares = []
+
+for n in num:
+    if n%2 ==0:
+      pares.append(n)
+
+print(pares)
+
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
+
+
 
 ### Exercícios com WHILE
 
