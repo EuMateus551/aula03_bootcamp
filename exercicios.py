@@ -106,6 +106,23 @@ print(normalizardos)
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
 
+usuarios: dict = [
+    {"nome":"mateus","email":"mateus@gmail"},
+    {"nome":"","email":"joao@gmail"},
+    {"nome":"mateus","email":"mateus@gmail"},
+    {"nome":"mateus",},
+    {"nome":"mateus","email":""}
+]
+usuarios_com_falta: list = []
+
+for usuario in usuarios:
+    if("nome" not in usuario or usuario["nome"]== "" or "email" not in usuario or usuario["email"] == ""):
+        usuarios_com_falta.append(usuario)
+
+print("Usuários que estão com dados incompletos:")
+for i in usuarios_com_falta:
+    print(i)
+
 ### Exercício 9. Extração de Subconjuntos de Dados
 # Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares.
 
@@ -121,6 +138,27 @@ print(pares)
 
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
+
+produtos = [
+    {"categoria": "Eletrônicos"},
+    {"categoria": "Roupas"},
+    {"categoria": "Eletrônicos"},
+    {"categoria": "Livros"},
+    {"categoria": "Roupas"},
+    {"categoria": "Livros"},
+]
+
+vendas_por_categoria = {}
+
+for produto in produtos:
+    categoria = produto["categoria"]
+    if categoria in vendas_por_categoria:
+        vendas_por_categoria[categoria]+=1
+    else:
+        vendas_por_categoria[categoria]=1
+
+print(vendas_por_categoria)
+
 
 
 
